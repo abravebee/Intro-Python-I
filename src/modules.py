@@ -22,13 +22,14 @@ print("get windows version platform:", sys.getwindowsversion().platform, "platfo
 
 # Print out the version of Python you're using:
 # YOUR CODE HERE
-
+print("python version:", sys.version)
 
 import os
 # See the docs for the OS module: https://docs.python.org/3.7/library/os.html
 
 # Print the current process ID
 # YOUR CODE HERE
+print("current process ID:", os.getpid())
 
 # Print the current working directory (cwd):
 # YOUR CODE HERE
