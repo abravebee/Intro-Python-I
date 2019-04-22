@@ -10,6 +10,11 @@ import sys
 
 # Print out the command line arguments in sys.argv, one per line:
 # YOUR CODE HERE
+print("Number of arguments:", len(sys.argv))
+
+for x in sys.argv:
+    print("Argument: ", x)
+### Wolf output above includes path to wolf.py for whatever reason; console output is "Argument: modules.py". Only 1, despite length says there are 2?
 
 # Print out the OS platform you're using:
 # YOUR CODE HERE
