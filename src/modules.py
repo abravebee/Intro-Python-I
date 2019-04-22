@@ -33,6 +33,7 @@ print("current process ID:", os.getpid())
 
 # Print the current working directory (cwd):
 # YOUR CODE HERE
+print("cwd:", os.getcwd())
 
 # Print out your machine's login name
 # YOUR CODE HERE
