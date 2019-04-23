@@ -23,30 +23,39 @@ import sys
 import calendar
 from datetime import datetime
 
-def calend(calIn):
-  print(calIn)
-  month, year = [calIn[i] for i in calIn] 
-  print (month, year)
-  for i in calIn:
-    try:
-      print(int(i))
-    except:
-      print("Input expects integers, please try again.")
-      sys.exit()
 
-  if len(calIn) == 0:
-    print("current month")
-    #print current month
-  elif len(calIn) == 1:
-    #render month given of current year
-    print("month given of current year")
-  elif len(calIn) == 2:
-    print("month and year given")
-    #render month and year given
-  else:
-    print("expected input format")
-    #expected input format
-    #exit program
 
-calIn = input("calendar.py ").split(' ')
-calend(calIn)
+##take input in from sys.argv
+
+
+#calIn = input("calendar.py ").split(' ')
+#calend(calIn)
+
+if len(sys.argv) > 3:
+  #if they input more than 2 things
+  print("You have input too many variables")
+elif len(sys.argv) == 3:
+  #if they input 2 things
+  path, month, year = [x for x in sys.argv]
+  print("month, year", month, year)
+  try:
+    #make sure they input numbers
+    month, year = [int(month), int(year)]
+    print("month, year integers", month, year)
+  except:
+    #if we can't cast as integers, warn
+    print("Please input month and year as numerical values")
+elif len(sys.argv) == 2:
+  #if they input 1 thing
+  path, month = [x for x in sys.argv]
+  print("month", month)
+  try:
+    #make sure they input a number
+    month = int(month)
+    print("month integer", month)
+  except:
+    #if we can't cast as integer, warn
+    print("Please input month as numerical value")
+else:
+  #if they input nothing, return the current month
+  print("current month")
