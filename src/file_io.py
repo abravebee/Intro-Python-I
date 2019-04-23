@@ -9,6 +9,11 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Print all the contents of the file, then close the file
 
 # YOUR CODE HERE
+with open('foo.txt', 'r') as f:
+    content = f.read();
+    print(content)
+## writing it as print(f.read()) gives me an error about the file already being closed. 
+## possibly closes just before print, which is run before f.read() in this case?
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
