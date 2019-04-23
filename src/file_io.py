@@ -21,3 +21,11 @@ with open('foo.txt', 'r') as f:
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+with open('bar.txt', 'w') as b:
+    b.write('\n\nOutside, the wind ceased.\n Owls halted in mid-flight.\n Well, maybe they did, maybe they didn’t, certainly the central heating chose that moment to shut down, unable perhaps to cope with the supernatural chill that suddenly whipped through the room.')
+
+with open('bar.txt', 'r') as b:
+    content = b.read();
+    print(content)
+
+## How to do the above with r+?
