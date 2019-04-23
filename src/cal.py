@@ -23,13 +23,7 @@ import sys
 import calendar
 from datetime import datetime
 
-
-
 ##take input in from sys.argv
-
-
-#calIn = input("calendar.py ").split(' ')
-#calend(calIn)
 
 if len(sys.argv) > 3:
   #if they input more than 2 things
@@ -41,10 +35,10 @@ elif len(sys.argv) == 3:
   try:
     #make sure they input numbers
     month, year = [int(month), int(year)]
-    print("month, year integers", month, year)
+    print(calendar.month(year, month))
   except:
     #if we can't cast as integers, warn
-    print("Please input month and year as numerical values")
+    print("There was an error. Please check your inputs and try again.")
 elif len(sys.argv) == 2:
   #if they input 1 thing
   path, month = [x for x in sys.argv]
@@ -52,10 +46,13 @@ elif len(sys.argv) == 2:
   try:
     #make sure they input a number
     month = int(month)
-    print("month integer", month)
+    year = datetime.now().year
+    print(calendar.month(year, month))
   except:
     #if we can't cast as integer, warn
-    print("Please input month as numerical value")
+    print("There was an error. Please check your inputs and try again.")
 else:
   #if they input nothing, return the current month
-  print("current month")
+  month = datetime.now().month
+  year = datetime.now().year
+  print(calendar.month(year, month))
