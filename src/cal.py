@@ -22,3 +22,31 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+def calend(calIn):
+  print(calIn)
+  month, year = [calIn[i] for i in calIn] 
+  print (month, year)
+  for i in calIn:
+    try:
+      print(int(i))
+    except:
+      print("Input expects integers, please try again.")
+      sys.exit()
+
+  if len(calIn) == 0:
+    print("current month")
+    #print current month
+  elif len(calIn) == 1:
+    #render month given of current year
+    print("month given of current year")
+  elif len(calIn) == 2:
+    print("month and year given")
+    #render month and year given
+  else:
+    print("expected input format")
+    #expected input format
+    #exit program
+
+calIn = input("calendar.py ").split(' ')
+calend(calIn)
